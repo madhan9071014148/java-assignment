@@ -1,0 +1,40 @@
+Final keyword
+------------------
+>The final keyword is used to restrict the user. The java final keyword can be used in: 
+  .variable
+  .method
+  .class
+
+>final variable
+----------------
+ if you make any varible final, you cannot change the vlaue of final variable(it will be constant)
+
+Eg:
+  class Car{
+   final int speedlimit=90;//final variable
+    void run(){
+    speedlimit=400;
+  }
+  public staic void main(String args[]){
+  Car c=new Car();
+   c.run();
+ }
+ }//end of class                   OUTPUT:
+                                  ---------
+                                 compile time error
+
+class Car{
+final void run(){
+System.out.println("running");
+}
+class Honda extends Car{
+void run(){
+System.out.println("running safely with 100kmph");
+}
+public static void main(String[] args){
+Honda honda=new Honda();
+honda.run();
+}
+}                           OUTPUT:
+                            ---------
+                           compile time error because final class cannot be inherited

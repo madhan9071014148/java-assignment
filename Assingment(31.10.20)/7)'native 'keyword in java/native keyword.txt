@@ -1,0 +1,44 @@
+Native Keyword
+--------------------
+
+  *The native keyword is applied to a method to indicate that the method is implemented in native code using JNI (Java Native Interface). native is a modifier applicable only for methods and we can’t apply it anywhere else.
+
+The main objectives of the native keyword are: 
+---------------------------------------------------
+*To improve the performance of the system.
+*To achieve machine level/memory level communication.
+*To use already existing legacy non-java code.
+
+*The main advantage of native keyword is improvement in performance but the main disadvantage of native keyword is that it breaks platform-independent nature of java.
+
+Syntax: Declaring Native Methods
+---------------------------------------
+private native String getLine(String prompt);
+
+// Class 1
+// Helper class to illustrate native keyword 
+class Native
+{
+
+    static
+    {
+        System.loadLibrary("Native library path");
+    }
+
+    // Native method 
+    public native void m();
+}
+
+// Main class 
+class GFG
+{
+    public static void main(String[] args)
+    {
+        // creating object of helper class inside main() 
+        Native n = new Native();
+
+        // Calling native method that is defined
+        // inside  the above class
+        n.m();
+    }
+}

@@ -1,0 +1,103 @@
+Difference Between Concat() and + (String Concatenation Operator) in Java
+---------------------------------------------------------------------------------
+ 
+concat()
+  
+This method is of java.lang.String class which takes only one parameter as String.
+public java.lang.String concat(java.lang.String);  
++
+ 
+If on either side of + operator, there is a String, then + operator is called a concatenation operator.
+
+         Both concat() and + are used to concatenate the strings but they have some differences as described below:
+java.lang.NullPointerException
+ 
+concat() method if called on null String reference variable, will throw NullPointerException; while this is not the case with + operator.
+ 
+Example       
+String str = null;  
+str.concat(“abc”);  
+will throw java.lang.NullPointerException.  
+While  
+String str = null;  
+System.out.println(str+”abc”); // Output:- nullabc  
+While concatenating strings with + operator, a null reference variable changes to “null” (i.e. a String containing null as its contents.). That’s why str becomes “null” and output is nullabc.
+
+Number of arguments
+ 
+concat() takes only one argument while + can take any number of arguments.
+ 
+Example
+“Hello”+”James”+”Gosling”  
+Type of Argument
+ 
+Concat() only takes String type as argument. If any other type of argument is passed to concat() it will give compile time error.
+ 
+Example
+s.concat(2); // error as 2 is a non string value  
+  
+s.concat(“2”); // no error as here 2 is string (enclosed in “”)  
+While + can take any type of argument, while doing concatenation non-string type argument is converted to String by using its toString() method.
+ 
+Example
+String str=”abc”;  
+int i=2;  
+  
+System.out.println(str+i); // no error, Output:- abc2.  
+Here int value 2 is a primitive value. It will be first converted to a string value as,
+ 
+int------>Integer.toString(2)-------> a String representation of int value 2.
+ 
+Note
+ 
+At least one argument of + must be of string type otherwise + will behave like a mathematical addition operator instead of a string concatenation operator.
+ 
+Creation of new String object
+ 
+concat() returns new String object only when the length of argument string is > 0.
+ 
+Example
+String s1=”Hello”;  
+String s2=”James”;  
+String s3=s1.concat(s2);  
+Here concat() returns a new String object whose reference is stored in s3.
+ 
+But if the length of the argument string is 0, then concat() returns same original string instead of returning a new String object.
+ 
+Example
+String s1=”Hello”;  
+String s2=s1.concat(“”);  
+Here “(an empty string with length 0) is passed as an argument to concat(). So no new String object is created but reference to original string s1 is returned and stored in s2.
+ 
+Therefore, s1==s2 will give true here
+i.e. both s1 and s2 are pointing to same objects.
+ 
+While
+ 
++ creates a new String object every time it concatenates something, except when the concatenation is done at compile time.
+ 
+Example
+String s1=”Hello”;   
+  
+String s2=s1+”James”;  
+Here a new String object s2 is created with concatenated result (Hello James).
+ 
+Similarly,
+String s1=”Hello”;   
+  
+String s2=”James”;   
+  
+String s3=s1+s2;  
+Will create a new String object s3.
+ 
+In both above examples concatenation happens at run time.
+ 
+But,
+String s4=”Hello”+”James”;  
+Will not create a new String object because here concatenation will happen at compile time.
+ 
+There will be only one String object with the contents “Hello James”. Both String literals “Hello” and “James” will be discarded.
+ 
+Performance
+ 
+Concat() is consider better than + operator because concat() returns a new String object only when length of its arguments is > 0.
