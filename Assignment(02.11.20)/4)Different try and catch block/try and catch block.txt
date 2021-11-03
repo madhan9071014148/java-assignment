@@ -1,0 +1,37 @@
+1).only one try and catch block
+-----------------------------
+  try{
+    System.out.println("suspected lines of code");
+    }
+    catch(Exception e){
+    System.out.println(e.getMessage());
+    }
+
+2).one try and multiple catch block
+--------------------------------------
+ try{
+    System.out.println("suspected lines of code");
+    }
+    catch(Exception e){
+    System.out.println(e.getMessage());
+    }
+catch(Exception e){
+    System.out.println(e.getMessage());
+    }
+catch(Exception e){
+    System.out.println(e.getMessage());
+    }
+3). try,catch,finally(correct way of writing)
+---------------------------------------------------
+try{
+    System.out.println("suspected lines of code");
+    }
+    catch(Exception e){
+    System.out.println(e.getMessage());
+    }
+catch(Exception e){
+    System.out.println(e.getMessage());
+    }
+finally(){
+System.out.println("closing function");
+}
