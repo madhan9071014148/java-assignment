@@ -1,0 +1,18 @@
+Thread Priority in Java
+-----------------------------------------
+In a Java multithreading environment, every thread has a priority which is an integer value between 1 and 10 where 1 is the lowest and 10 is the highest. Thread priority is an essential concept since the scheduler picks up the threads for execution based on the priority. The thread scheduler gives preference to higher priority threads. This means it executes the high priority threads first and then the low priority threads.  It also depends on the JVM implementation. If there are multiple threads with different priorities, it uses preemptive scheduling based on priority. Suppose if threads have the same priorities, then it may use the FCFS concept or waiting time.
+
+Java thread priority in Multithreading
+-----------------------------------------------
+
+Constant variables defining Thread priority
+The Thread class has 3 constant variables that define the thread priorities. We can assign priorities for the user threads else the system automatically assigns default values.
+
+*MIN_PRIORITY: This is the minimum priority with a value of 1.
+public static int MIN_PRIORITY
+
+*NORM_PRIORITY: This is the default normal priority with a value of 5.
+public static int NORM_PRIORITY
+
+*MAX_PRIORITY: This is the maximum priority with a value of 10.
+public static int MAX_PRIORITY

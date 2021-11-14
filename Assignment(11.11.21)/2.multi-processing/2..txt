@@ -1,0 +1,9 @@
+Multiprocessing
+------------------
+*Multiprocessing refers to using multiple CPUs/processors in a single system. Multiple CPUs can act in a parallel fashion and executes multiple processes together. They increase computing power to a great extent. Symmetric multiprocessing and asymmetric multiprocessing are two types of multiprocessing.
+
+*Multiple processes are executed in a parallel fashion.
+
+*Multiprocessing can be classified into symmetric and asymmetric multiprocessing.
+
+*Process creation is time-consuming.
